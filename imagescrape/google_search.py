@@ -1,10 +1,7 @@
-import json
-import requests
-import os
-import urllib
-import imghdr
+import json,requests,os,urllib,imghdr
 from tqdm import tqdm
 from bs4 import BeautifulSoup
+import pykakasi #全角を半角ローマ字に変換
 class Google:
     def __init__(self):
         self.GOOGLE_SEARCH_URL = 'https://www.google.co.jp/search'
@@ -95,7 +92,6 @@ class Google:
                 f.write(content)
 
 def kakasi(words):
-    import pykakasi #全角を半角ローマ字に変換
     kakasi = pykakasi.kakasi()
     kakasi.setMode('H', 'a')
     kakasi.setMode('K', 'a')
